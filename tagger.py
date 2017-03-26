@@ -29,6 +29,18 @@ class Config(object):
     l2 = 0.001
     window_size = 3
 
+    def __repr__(self):
+        attributes = [(a, v) for a, v in self.__class__.__dict__.items()
+                      if not 'function' in str(v) \
+                      and not (a.startswith('__') and a.endswith('__'))]
+        representation = 'Model hyperparameters:\n'
+        for key, value in attributes:
+            representation += '{key}: {value}\n'.format(
+                key=key, value=value
+            )
+        return representation
+
+
 
 class Tagger(Model):
     """Implements a tagger model.
