@@ -21,12 +21,12 @@ class Config(object):
     """
     embed_size = 50
     batch_size = 64
-    hidden_size = 100
+    hidden_size = 200
     max_epochs = 30
     early_stopping = 2
     dropout = 0.9
     lr = 0.001
-    l2 = 0.001
+    l2 = 0.003
     window_size = 3
 
     def __repr__(self):
